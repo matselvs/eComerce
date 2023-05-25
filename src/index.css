@@ -1,0 +1,278 @@
+header{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6950A1;
+  width:  595px;
+  height: 65px;
+  margin-top: -10px;
+}
+
+header  img {
+    margin-left: 10px;
+    }
+
+header h1 {
+    margin-right:15px;
+    color: #FFF;
+    font-family: 'Poppins';
+    font-weight: lighter;
+  }
+
+  .custom-footer {
+    padding: auto;
+    width:  595px;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 25%;
+    border: solid 5px #6950A1;
+    margin-top: 20px;
+  }
+
+  .small-text {
+    font-size: 8px; /* Tamanho de fonte pequeno */
+    margin-bottom: -25px; /* Espaçamento inferior para separar do contêiner de imagens */
+    font-weight: bold;
+    font-family: 'Poppins';
+    margin-left: 5px;
+  }
+  
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  
+  .image-container img {
+    margin-right: auto; 
+  }
+
+
+  .game-list {
+    height: auto;
+    width:  595px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 25%;
+    margin-top: 4%;
+  }
+
+  .card {
+    
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding-bottom: 30px;
+  }
+
+  .gameimg{
+    
+    width: 189px;
+    height: 199px;
+   
+  }
+  
+  input[type='checkbox'] {
+    margin-left: 5px;
+    margin-top: -28px;
+   
+  }
+
+  input[type='checkbox']:checked {
+    appearance: none;
+    border: 6px solid #6950A1;
+    background-color: #6950A1;
+    border-radius: 2px;
+  }
+
+  h3 {
+    margin-bottom: 5px; 
+    line-height: 0%;
+    font-family: 'Poppins'
+  }
+  
+  p {
+    margin-bottom: 10px; 
+    margin-left: 25px;
+    font-family: 'Poppins'
+  }
+  
+  .price-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .counting{
+    margin-left: 68%;
+    position: absolute;
+    margin-top: -55px;
+    background-color: #6950A1;
+    padding: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 8px;
+    color: #FFF;
+    
+    
+  }
+
+.preços{
+  font-weight: 600;
+  font-family: 'Poppins';
+
+}
+
+.gocarbtn{
+  background-color: #6950A1;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  margin-left: 770px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  margin-top: 20px;
+}
+
+.gocarbtn:hover{
+  cursor: pointer;
+}
+
+.gamesalestittle{
+  margin-left: 27%;
+  font-family: 'Poppins';
+  font-weight:400;
+}
+.gamename{
+  font-size: auto;
+  width: auto;
+  font-size:medium ;
+}
+
+.cart-title{
+  margin-left: 26%;
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+.cart-list{
+  margin-left: 26%;
+}
+
+.checkout-btn{
+  background-color: #6950A1;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  margin-left: 320px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  margin-top: 20px;
+}
+.checkout-btn:hover{
+  cursor: pointer;
+}
+
+.return-btn{
+  background-color: #6950A1;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  margin-left: 290px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  
+}
+
+.return-btn:hover{
+  cursor: pointer;
+}
+
+.total-price{
+  padding-top: 5%;
+  margin-left: 26%;
+  font-weight: 600;
+  font-family: 'Poppins';
+
+}
+
+.increase-btn{
+  background-color: #6950A1;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  height: 30px;
+}
+
+.increase-btn:hover{
+  cursor: pointer;
+}
+
+.decrease-btn{
+  background-color: #6950A1;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  height: 30px;
+  margin-left: 40px;
+}
+
+.decrease-btn:hover{
+  cursor: pointer;
+}
+
+.quantity-controls{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+
+.item-count{
+  padding-right: 20px;
+  margin-top: 5px;
+}
+
+.checkout-container{
+  margin-left: 26%;
+}
+
+.confirm-purchase-btn{
+  background-color: #6950A1;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  border: none;
+  margin-left: 220px;
+  font-weight: bold;
+  font-family: 'Poppins';
+  margin-top: 20px;
+}
+
+.confirm-purchase-btn:hover{
+  cursor: pointer;
+}
+
+.checkout-title{
+  
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+html,
+body {
+  height: auto;
+}
