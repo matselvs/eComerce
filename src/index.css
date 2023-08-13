@@ -29,6 +29,7 @@ header h1 {
     margin-left: 25%;
     border: solid 5px #6950A1;
     margin-top: 20px;
+    margin-bottom: -10px;
   }
 
   .small-text {
@@ -64,7 +65,6 @@ header h1 {
   }
 
   .card {
-    
     width: 200px;
     height: 250px;
     padding: 10px;
@@ -72,18 +72,32 @@ header h1 {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding-bottom: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
+    margin-bottom: 10px;
+    background-color: #f7f7f7; /* Add background color for better visibility */
+    border: 1px solid #e3e2e2; /* Add border for better visibility */
+    border-radius: 6px;
   }
 
-  .gameimg{
-    
+  .gameimg{ 
     width: 189px;
     height: 199px;
+  }
+
+  .cartimg{
+    width: 189px;
+    height: auto;
+    margin-bottom: 100px;
+    padding-right: 20px;
    
   }
   
   input[type='checkbox'] {
-    margin-left: 5px;
+    margin-left: -120px;
     margin-top: -28px;
    
   }
@@ -93,6 +107,10 @@ header h1 {
     border: 6px solid #6950A1;
     background-color: #6950A1;
     border-radius: 2px;
+  }
+
+  input[type='checkbox']:hover{
+    cursor: pointer;
   }
 
   h3 {
@@ -115,21 +133,24 @@ header h1 {
   .counting{
     margin-left: 68%;
     position: absolute;
-    margin-top: -55px;
+    margin-top: -65px;
     background-color: #6950A1;
     padding: 8px;
     padding-left: 13px;
     padding-right: 13px;
     border-radius: 8px;
     color: #FFF;
-    
-    
   }
 
-.preços{
+.gamespreços{
   font-weight: 600;
   font-family: 'Poppins';
+}
 
+.cartpreços{
+  font-weight: 600;
+  font-family: 'Poppins';
+  margin-right: 70%;
 }
 
 .gocarbtn{
@@ -153,16 +174,55 @@ header h1 {
   font-family: 'Poppins';
   font-weight:400;
 }
+
 .gamename{
   font-size: auto;
-  width: auto;
   font-size:medium ;
+}
+
+.cartname{
+  font-size: auto;
+  font-size:medium ;
+  margin-top: -80px;
+  margin-right: 67%;
+}
+
+.game-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-information {
+  flex: 1; /* Allow the cart-information to expand and take available space */
+  text-align: center; 
+}
+
+.game-cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px; /* Adjust the margin as needed */
+  
+}
+.quantity-controls {
+position: absolute;
+margin-left: 22%;
+margin-top: 60px;
+}
+
+.quantidadetext{
+  font-weight: 600;
+  
+  margin-top: -5px;
+  margin-right: 70%;
 }
 
 .cart-title{
   margin-left: 26%;
   font-family: 'Poppins';
   font-weight: 400;
+  margin-bottom: 30px;
 }
 
 .cart-list{
@@ -228,7 +288,7 @@ header h1 {
   padding: 8px;
   border: none;
   height: 30px;
-  margin-left: 40px;
+ 
 }
 
 .decrease-btn:hover{
@@ -272,7 +332,32 @@ header h1 {
   font-weight: 400;
 }
 
+.checkout-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; /* Negative margin to create spacing between items */
+}
+
+.checkout-item {
+  
+  padding: 10px; /* Add padding to each item for spacing */
+  margin: 10px; /* Add margin to each item for spacing */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: #f7f7f7; /* Add background color for better visibility */
+  border: 1px solid #ccc; /* Add border for better visibility */
+}
+
+.checkout-summary{
+  font-weight: bold;
+  margin-bottom: 60px ;
+}
+
+
+
 html,
 body {
   height: auto;
+  font-family: 'Poppins';
 }

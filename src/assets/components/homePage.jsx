@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Games from '../../assets/games';
+import { useState } from "react";
+import Games from "../../assets/games";
 
 const GamesList = () => {
   const [selectedGames, setSelectedGames] = useState([]);
@@ -11,14 +11,21 @@ const GamesList = () => {
   const handleCheckboxChange = (e, game) => {
     const isChecked = e.target.checked;
     if (isChecked) {
-      setSelectedGames((prevSelectedGames) => [...prevSelectedGames, { ...game, quantity: 1 }]);
-      setTotalPrice((prevTotalPrice) => prevTotalPrice + parseFloat(game.price));
+      setSelectedGames((prevSelectedGames) => [
+        ...prevSelectedGames,
+        { ...game, quantity: 1 },
+      ]);
+      setTotalPrice(
+        (prevTotalPrice) => prevTotalPrice + parseFloat(game.price)
+      );
       setCount((prevCount) => prevCount + 1);
     } else {
       setSelectedGames((prevSelectedGames) =>
         prevSelectedGames.filter((selectedGame) => selectedGame.id !== game.id)
       );
-      setTotalPrice((prevTotalPrice) => prevTotalPrice - parseFloat(game.price));
+      setTotalPrice(
+        (prevTotalPrice) => prevTotalPrice - parseFloat(game.price)
+      );
       setCount((prevCount) => prevCount - 1);
     }
   };
@@ -42,14 +49,17 @@ const GamesList = () => {
   const handleIncreaseQuantity = (gameId) => {
     setSelectedGames((prevSelectedGames) =>
       prevSelectedGames.map((game) => {
-        if (game.id === gameId && game.quantity < getGameById(gameId).maxQuantity) {
+        if (
+          game.id === gameId &&
+          game.quantity < getGameById(gameId).maxQuantity
+        ) {
           return { ...game, quantity: game.quantity + 1 };
         }
         return game;
       })
     );
-    setTotalPrice((prevTotalPrice) =>
-      prevTotalPrice + parseFloat(getGameById(gameId).price)
+    setTotalPrice(
+      (prevTotalPrice) => prevTotalPrice + parseFloat(getGameById(gameId).price)
     );
     setCount((prevCount) => prevCount + 1);
   };
@@ -63,8 +73,8 @@ const GamesList = () => {
         return game;
       })
     );
-    setTotalPrice((prevTotalPrice) =>
-      prevTotalPrice - parseFloat(getGameById(gameId).price)
+    setTotalPrice(
+      (prevTotalPrice) => prevTotalPrice - parseFloat(getGameById(gameId).price)
     );
     setCount((prevCount) => prevCount - 1);
   };
@@ -78,19 +88,26 @@ const GamesList = () => {
       <div key={game.id} className="card">
         <img className="gameimg" src={game.imgURL} alt={game.name} />
         <h3 className="gamename">{game.name}</h3>
-        <p className="preços">Price: {game.price} R$</p>
-        <input type="checkbox" onChange={(e) => handleCheckboxChange(e, game)} />
+        <p className="gamespreços">Preço: {game.price} R$</p>
+        <input
+          type="checkbox"
+          onChange={(e) => handleCheckboxChange(e, game)}
+        />
       </div>
     ));
   };
 
   const renderCart = () => {
     return selectedGames.map((game) => (
-      <div key={game.id} className="cart-item item-container">
-        <img className="gameimg" src={game.imgURL} alt={game.name} />
-        <h3 className="gamename">{game.name}</h3>
-        <p className="preços">Price: {game.price} R$</p>
-        <div className="quantity-controls">
+      <div key={game.id} className="cart-item-item-container">
+        <div className="game-details">
+          <img className="cartimg" src={game.imgURL} alt={game.name} />
+          <div className="cart-information">
+            <h3 className="cartname">{game.name}</h3>
+            <p className="cartpreços">Preço: {game.price} R$</p>
+            <p className="quantidadetext">Quantidade:</p>
+          </div>
+          <div className="quantity-controls">
           <button
             className="decrease-btn"
             onClick={() => handleDecreaseQuantity(game.id)}
@@ -107,36 +124,42 @@ const GamesList = () => {
             +
           </button>
         </div>
+        </div>
+       
       </div>
     ));
   };
 
   const renderCheckout = () => {
-    const totalQuantity = selectedGames.reduce((total, game) => total + game.quantity, 0);
-  
+    const totalQuantity = selectedGames.reduce(
+      (total, game) => total + game.quantity,
+      0
+    );
+
     return (
       <div className="checkout-container">
         <h2 className="checkout-title">Checkout</h2>
-        <div className="checkout-summary">
-          <p className="checkout-total-quantity">Quantidade total de itens: {totalQuantity}</p>
-          <p className="checkout-total-price">Valor total: {totalPrice.toFixed(2)} R$</p>
-        </div>
+
         <div className="checkout-items">
           {selectedGames.map((game) => (
             <div key={game.id} className="checkout-item">
               <img className="gameimg" src={game.imgURL} alt={game.name} />
-              <p className="gamename">{game.name}</p>
-              <p className="checkout-game-quantity">Quantidade: {game.quantity}</p>
-              
             </div>
-            
           ))}
+        </div>
+        <div className="checkout-summary">
+          <p className="checkout-total-quantity">
+            Produtos Escolhidos: {totalQuantity}
+          </p>
+          <p className="checkout-total-price">
+            Valor total: {totalPrice.toFixed(2)} R$
+          </p>
         </div>
         <button className="confirm-purchase-btn">Confirmar Compra</button>
       </div>
     );
   };
-  
+
   return (
     <div>
       {!isCartVisible && !isCheckout ? (
@@ -151,17 +174,17 @@ const GamesList = () => {
       ) : (
         <>
           {isCheckout ? (
-            <>
-              {renderCheckout()}
-             
-            </>
+            <>{renderCheckout()}</>
           ) : (
             <>
               <h2 className="cart-title">Carrinho de Compras:</h2>
               <h2 className="counting">{count}</h2>
               <div className="cart-list">{renderCart()}</div>
               <p className="total-price">Total: {totalPrice.toFixed(2)} R$</p>
-              <button className="checkout-btn" onClick={handleCheckoutButtonClick}>
+              <button
+                className="checkout-btn"
+                onClick={handleCheckoutButtonClick}
+              >
                 Finalizar Compra
               </button>
               <button className="return-btn" onClick={handleReturnButtonClick}>
